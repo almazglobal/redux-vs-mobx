@@ -1,26 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReduxWay from "./redux";
+import MobxWay from "./mobx";
+import {configure} from "mobx";
+
+setTimeout(() =>
+    configure({
+        enforceActions: "never",
+        reactionScheduler: (f) => setTimeout(f),
+    }),
+)
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            {/*<ReduxWay />*/}
+            <MobxWay/>
+        </div>
+    );
 }
 
 export default App;
